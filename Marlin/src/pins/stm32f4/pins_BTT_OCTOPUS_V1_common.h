@@ -149,10 +149,10 @@
 //
 // Filament Runout Sensor
 //
-#define FIL_RUNOUT_PIN                      PG12  // E0DET
-#define FIL_RUNOUT2_PIN                     PG13  // E1DET
-#define FIL_RUNOUT3_PIN                     PG14  // E2DET
-#define FIL_RUNOUT4_PIN                     PG15  // E3DET
+//#define FIL_RUNOUT_PIN                      PG12  // E0DET
+//#define FIL_RUNOUT2_PIN                     PG13  // E1DET
+//#define FIL_RUNOUT3_PIN                     PG14  // E2DET
+//#define FIL_RUNOUT4_PIN                     PG15  // E3DET
 
 //
 // Power Supply Control
@@ -178,18 +178,18 @@
   #define X_CS_PIN                          PC4
 #endif
 
-#define Y_STEP_PIN                          PG0   // MOTOR 1
-#define Y_DIR_PIN                           PG1
-#define Y_ENABLE_PIN                        PF15
+#define Y_STEP_PIN                          PF11  // MOTOR 2
+#define Y_DIR_PIN                           PG3
+#define Y_ENABLE_PIN                        PG5
 #ifndef Y_CS_PIN
-  #define Y_CS_PIN                          PD11
+  #define Y_CS_PIN                          PC6
 #endif
 
-#define Z_STEP_PIN                          PF11  // MOTOR 2
-#define Z_DIR_PIN                           PG3
-#define Z_ENABLE_PIN                        PG5
+#define Z_STEP_PIN                          PG0   // MOTOR 1
+#define Z_DIR_PIN                           PG1
+#define Z_ENABLE_PIN                        PF15
 #ifndef Z_CS_PIN
-  #define Z_CS_PIN                          PC6
+  #define Z_CS_PIN                          PD11
 #endif
 
 #define Z2_STEP_PIN                         PG4   // MOTOR 3
@@ -199,6 +199,21 @@
   #define Z2_CS_PIN                         PC7
 #endif
 
+#define Z3_STEP_PIN                         PF9   // MOTOR 4
+#define Z3_DIR_PIN                          PF10
+#define Z3_ENABLE_PIN                       PG2
+#ifndef Z3_CS_PIN
+  #define Z3_CS_PIN                         PF2
+#endif
+
+#define Z4_STEP_PIN                         PC13  // MOTOR 5
+#define Z4_DIR_PIN                          PF0
+#define Z4_ENABLE_PIN                       PF1
+#ifndef Z4_CS_PIN
+  #define Z4_CS_PIN                         PE4
+#endif
+
+/*
 #define E0_STEP_PIN                         PF9   // MOTOR 4
 #define E0_DIR_PIN                          PF10
 #define E0_ENABLE_PIN                       PG2
@@ -227,7 +242,7 @@
 #ifndef E3_CS_PIN
   #define E3_CS_PIN                         PD3
 #endif
-
+*/
 //
 // Temperature Sensors
 //
@@ -300,15 +315,22 @@
   #define X_SERIAL_TX_PIN                   PC4
   #define X_SERIAL_RX_PIN        X_SERIAL_TX_PIN
 
-  #define Y_SERIAL_TX_PIN                   PD11
-  #define Y_SERIAL_RX_PIN        Y_SERIAL_TX_PIN
+  #define Y_SERIAL_TX_PIN                   PC6
+  #define Y_SERIAL_RX_PIN        Z_SERIAL_TX_PIN
 
-  #define Z_SERIAL_TX_PIN                   PC6
-  #define Z_SERIAL_RX_PIN        Z_SERIAL_TX_PIN
+  #define Z_SERIAL_TX_PIN                   PD11
+  #define Z_SERIAL_RX_PIN        Y_SERIAL_TX_PIN
 
   #define Z2_SERIAL_TX_PIN                  PC7
   #define Z2_SERIAL_RX_PIN      Z2_SERIAL_TX_PIN
 
+  #define Z3_SERIAL_TX_PIN                  PF2
+  #define Z3_SERIAL_RX_PIN      E0_SERIAL_TX_PIN
+
+  #define Z4_SERIAL_TX_PIN                  PE4
+  #define Z4_SERIAL_RX_PIN      E1_SERIAL_TX_PIN
+
+/*
   #define E0_SERIAL_TX_PIN                  PF2
   #define E0_SERIAL_RX_PIN      E0_SERIAL_TX_PIN
 
@@ -320,7 +342,7 @@
 
   #define E3_SERIAL_TX_PIN                  PD3
   #define E3_SERIAL_RX_PIN      E3_SERIAL_TX_PIN
-
+*/
   // Reduce baud rate to improve software serial reliability
   #define TMC_BAUD_RATE                    19200
 #endif
