@@ -325,10 +325,10 @@
   #define Z2_SERIAL_RX_PIN      Z2_SERIAL_TX_PIN
 
   #define Z3_SERIAL_TX_PIN                  PF2
-  #define Z3_SERIAL_RX_PIN      E0_SERIAL_TX_PIN
+  #define Z3_SERIAL_RX_PIN      Z3_SERIAL_TX_PIN
 
   #define Z4_SERIAL_TX_PIN                  PE4
-  #define Z4_SERIAL_RX_PIN      E1_SERIAL_TX_PIN
+  #define Z4_SERIAL_RX_PIN      Z4_SERIAL_TX_PIN
 
 /*
   #define E0_SERIAL_TX_PIN                  PF2
