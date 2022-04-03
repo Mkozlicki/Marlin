@@ -1572,6 +1572,7 @@ void prepare_line_to_destination() {
       // Set delta/cartesian axes directly
       target[axis] = distance;                  // The move will be towards the endstop
       planner.buffer_segment(target OPTARG(HAS_DIST_MM_ARG, cart_dist_mm), home_fr_mm_s, active_extruder);
+
     #endif
 
     planner.synchronize();
@@ -1581,8 +1582,13 @@ void prepare_line_to_destination() {
       #if HOMING_Z_WITH_PROBE && HAS_QUIET_PROBING
         if (axis == Z_AXIS && final_approach) probe.set_probing_paused(false);
       #endif
-
+      if (DEBUGGING(LEVELING)){
+        DEBUG_ECHOLNPGM("Check 1");
+      }
       endstops.validate_homing_move();
+      if (DEBUGGING(LEVELING)){
+        DEBUG_ECHOLNPGM("Check 2");
+      }
 
       // Re-enable stealthChop if used. Disable diag1 pin on driver.
       TERN_(SENSORLESS_HOMING, end_sensorless_homing_per_axis(axis, stealth_states));
