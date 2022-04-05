@@ -213,14 +213,13 @@
   #define Z4_CS_PIN                         PE4
 #endif
 
-/*
-#define E0_STEP_PIN                         PF9   // MOTOR 4
-#define E0_DIR_PIN                          PF10
-#define E0_ENABLE_PIN                       PG2
+#define E0_STEP_PIN                         PE2   // MOTOR 4
+#define E0_DIR_PIN                          PE3
+#define E0_ENABLE_PIN                       PD4
 #ifndef E0_CS_PIN
-  #define E0_CS_PIN                         PF2
+  #define E0_CS_PIN                         PE1
 #endif
-
+/*
 #define E1_STEP_PIN                         PC13  // MOTOR 5
 #define E1_DIR_PIN                          PF0
 #define E1_ENABLE_PIN                       PF1
